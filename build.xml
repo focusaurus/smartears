@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<project name="smartears" default="compile" basedir=".">
+  <property name="app.name" value="smartears"/>
+  <property name="build.dir" value="build"/>
+  <property name="build.classes" value="${build.dir}/classes"/>
+  <!-- Global "magic" property for <javac> -->
+  <property name="build.compiler" value="modern"/>
+  <property name="build.lib" value="${build.dir}/lib"/>
+  <property name="doc.dir" value="doc"/>
+  <property name="javadoc.dir" value="${doc.dir}/api"/>
+  <property name="lib.dir" value="lib"/>
+  <property name="package.name" value="net.codemusic.smartears"/>
+  <property name="package.path" value="net/codemusic/smartears"/>
+  <property name="sound.dir" value="sounds"/>
+  <property name="src.dir" value="src"/>
+
+  <path id="build.classpath">
+    <fileset dir="${lib.dir}">
+      <include name="**/*.jar"/>
+    </fileset>
+  </path>
+
+  <path id="run.classpath">
+    <pathelement location="${build.classes}"/>
+    <pathelement location="${build.dir}"/>
+    <fileset dir="${lib.dir}">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+<!--
+<taskdef name="jalopy" classname="de.hunsicker.jalopy.plugin.ant.AntPlugin"/>
+-->
+  <target name="prepare">
+    <mkdir dir="${build.dir}/${sound.dir}"/>
+    <mkdir dir="${build.lib}"/>
+    <mkdir dir="${build.classes}"/>
+    <mkdir dir="dist"/>
+    <copy todir="${build.dir}/${sound.dir}">
+      <fileset dir="${sound.dir}">
+      	 <include name="*"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="compile" depends="prepare">
+    <javac deprecation="on" debug="on"
+	   destdir="${build.classes}"
+           optimize="on">
+      <classpath refid="build.classpath"/>
+      <exclude name="net/codemusic/smartears/dev/**"/>
+      <src path="${src.dir}/java"/>
+    </javac>
+  </target>
+
+  <target name="compile:dev" depends="prepare">
+    <javac deprecation="on" 
+	   destdir="${build.classes}"
+           optimize="off"
+	   debug="on">
+      <classpath refid="build.classpath"/>
+      <src path="${src.dir}/java"/>
+    </javac>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="${package.name}.SmartEars" 
+	  fork="true">
+      <classpath refid="run.classpath"/>
+    </java>
+  </target>
+
+  <target name="test" depends="compile">
+    <junit haltonfailure="yes" printsummary="withOutAndErr">
+    <classpath refid="run.classpath"/>
+    	<batchtest>
+		<fileset dir="${build.classes}">
+		<include name="**/test/*TestCase.class"/>
+		</fileset>
+	</batchtest>
+    </junit>
+  </target>
+<!--  
+  <target name="format">
+    <jalopy fileformat="unix" style="${user.home}/.jalopy/preferences.jal">
+    	<fileset dir="${src.dir}">
+	  <include name="java/${package.path}/**/*.java"/>
+	  <exclude name="java/${package.path}/dev/*"/>
+	</fileset>
+    </jalopy>
+    
+  </target>
+-->
+  <target name="jar" depends="compile">
+    <jar jarfile="dist/${app.name}.jar" update="true">
+      <fileset dir="${build.dir}" includes="classes/**/*.class,**/*.wav"/>
+      <fileset dir="${build.classes}" includes="**/*.class"/>
+      <manifest>
+        <attribute name="Main-Class" value="${package.name}.SmartEars"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="sign" depends="jar">
+    <signjar jar="dist/${app.name}.jar"
+    alias="myself"
+    keystore="../codemusic_keystore"
+    storepass="Lk1uan"/>
+  </target>
+
+  <target name="javadoc" depends="compile">
+    <mkdir dir="${javadoc.dir}"/>  
+    <javadoc sourcepath="${src.dir}/java" 
+    packagenames="net.codemusic.smartears,net.codemusic.smartears.event,net.codemusic.smartears.ui"
+    destdir="${javadoc.dir}">
+    <classpath refid="run.classpath"/>
+    </javadoc>
+  </target>
+ 
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <target name="all" depends="clean, compile, javadoc, jar, sign"/>
+</project>

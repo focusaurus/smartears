@@ -1,0 +1,280 @@
+
+Name: net/codemusic/smartears/MainFrame_AboutBox.class
+SHA1-Digest: suolrrbEJCz1lTb6X9aoZ6HSqK8=
+
+Name: net/codemusic/smartears/AnswerManager$2.class
+SHA1-Digest: odpN01FlXFXWhrKe/iNYP5MBU4g=
+
+Name: net/codemusic/smartears/SettingsManager.class
+SHA1-Digest: kGdY2LkfMYHCHnkOfOdcg5UO6tk=
+
+Name: net/codemusic/smartears/ui/MainFrame$20.class
+SHA1-Digest: otGUEV5+hSIz09xl6yjzSBw6iuc=
+
+Name: net/codemusic/smartears/RangeException.class
+SHA1-Digest: xKTNRChMSjGmLFclfcwkqK2rmvA=
+
+Name: net/codemusic/smartears/ui/MainFrame.class
+SHA1-Digest: zkPF9k6rK9FUEmQvMoTU0Pn5C3c=
+
+Name: net/codemusic/smartears/IScoreManager.class
+SHA1-Digest: g8CEZTbgr9txzwIKL5Z7TF2fVCM=
+
+Name: net/codemusic/smartears/IAnswer.class
+SHA1-Digest: uqybfyjHPVmPOZteDgzeknSrftc=
+
+Name: net/codemusic/smartears/event/SettingsListener.class
+SHA1-Digest: AXg7IlAWePcr6xa6G/ZL3ASJTcw=
+
+Name: net/codemusic/smartears/BasicAnswer$2.class
+SHA1-Digest: BnAAHolqkAlii2Gl0RwvqlfnOCM=
+
+Name: net/codemusic/smartears/ui/MainFrame$13.class
+SHA1-Digest: knaZnqF84JiLksLzLTyHQfF76P0=
+
+Name: net/codemusic/smartears/Intervals.class
+SHA1-Digest: yX+mO04VlO0yxkUtrv31IBL3jkU=
+
+Name: net/codemusic/smartears/ui/MainFrame$8.class
+SHA1-Digest: j1N2phhXF806jNvtpU/AafxYSDA=
+
+Name: net/codemusic/smartears/ui/MainFrame$3.class
+SHA1-Digest: Z9tTQfN6+mhAcvGEYSIcN9vRtao=
+
+Name: sounds/correct.wav
+SHA1-Digest: kFjLeLh9TNz0Edx22hG0c7nFExQ=
+
+Name: net/codemusic/smartears/event/ScoreListener.class
+SHA1-Digest: gD8oBvTw3CMKx2UvKZfj/CwejPU=
+
+Name: net/codemusic/smartears/event/ScoreEvent.class
+SHA1-Digest: XpkX+Gk3yPh/dH2kX6cWkaA0/Es=
+
+Name: net/codemusic/smartears/NoPossibleAnswersException.class
+SHA1-Digest: HMuxd3LXXnMr7yW+Ax0h8E4iPPA=
+
+Name: net/codemusic/smartears/ui/MainFrame$18.class
+SHA1-Digest: 85ini3ykmx7b4sgJE6xmL4hZDvo=
+
+Name: net/codemusic/smartears/BasicAnswer$1.class
+SHA1-Digest: Tz+4Pm+4qUxX3CbUVz54ykAfXSY=
+
+Name: net/codemusic/smartears/event/ExampleListener.class
+SHA1-Digest: wx6yRw8ofO9xiNVYI9BaUozF4Nw=
+
+Name: net/codemusic/smartears/event/IScoreEventManager.class
+SHA1-Digest: ZaPHzEgy1JjgmmXLoqZGqtv4k8w=
+
+Name: net/codemusic/smartears/ui/MainFrame$12.class
+SHA1-Digest: leJzS97MXWb55lL6pvye+RlGh4g=
+
+Name: net/codemusic/smartears/ui/Keyboard$Key.class
+SHA1-Digest: +Msiu4XutnAeKWiRJvwSjG0DdyM=
+
+Name: net/codemusic/smartears/SmartEars.class
+SHA1-Digest: wHodPAFsb75AoOulbp2SKXo5Bms=
+
+Name: net/codemusic/smartears/ui/MainFrame$2.class
+SHA1-Digest: xycwJ2LsAuvQQ6/Mfp6v2L5DRd0=
+
+Name: net/codemusic/smartears/AnswerManager$1.class
+SHA1-Digest: fxVyj/cQrxBXN3yy/iOsKrZDIgw=
+
+Name: net/codemusic/smartears/ui/MainFrame_AboutBox.class
+SHA1-Digest: em8S5TvafnljrL86uxgOZgiIPSQ=
+
+Name: net/codemusic/smartears/ui/InstrumentRenderer.class
+SHA1-Digest: AbkKFTRbTBK/BFzwfXFptkXw7rk=
+
+Name: net/codemusic/smartears/ExcerciseManager.class
+SHA1-Digest: T31sy4LJJylKcAmSqHPCi+OUjFY=
+
+Name: net/codemusic/smartears/ScoreManager.class
+SHA1-Digest: 4wKN9yY3Q/Kp7vv4eN2WO7gkRAI=
+
+Name: net/codemusic/smartears/event/SettingsAdapter.class
+SHA1-Digest: 8VAVHcUwI1mYVcMC3BdQ18YxERE=
+
+Name: net/codemusic/smartears/ScoreManager$1.class
+SHA1-Digest: iysaC3eAG1HZEaQGeJb4qpPxHh0=
+
+Name: net/codemusic/smartears/ui/MainFrame$17.class
+SHA1-Digest: YhgzGpnu0Ngy/LJNuOvmjXsTbAM=
+
+Name: net/codemusic/smartears/IAnswerSelectionStrategy.class
+SHA1-Digest: HXTDwA+flqSow7QGCSFrKhbOsds=
+
+Name: net/codemusic/smartears/event/ScoreAdapter.class
+SHA1-Digest: kJsfo85uLlXMiTKZ2XpJ9u0eeak=
+
+Name: net/codemusic/smartears/ui/MainFrame$7.class
+SHA1-Digest: ozTZr6b3O+aNFUVempziLYcS9qU=
+
+Name: net/codemusic/smartears/ui/MainFrame$1.class
+SHA1-Digest: wlZlM6nTUL4Z2L8nECrZ50JGmoc=
+
+Name: net/codemusic/smartears/IExampleManager.class
+SHA1-Digest: C/dU0PFv/IIe/KP0jaaVpNKy9Vg=
+
+Name: net/codemusic/smartears/event/RepeatEvent.class
+SHA1-Digest: DFwOl7qKyNaPAQhd/SR2v8n+br8=
+
+Name: net/codemusic/smartears/AnswerManager.class
+SHA1-Digest: Al4MJ+l3KcO/B0t9kbQAyoO7cXE=
+
+Name: net/codemusic/smartears/event/ExcerciseListener.class
+SHA1-Digest: 97CGy79OTOYalbyTIjJGa6k69+M=
+
+Name: net/codemusic/smartears/ui/MainFrame$11.class
+SHA1-Digest: 01WKW7zFH48LVGVDXm7zOXxN0cY=
+
+Name: net/codemusic/smartears/RandomStrategy.class
+SHA1-Digest: S0Aycq1CQPqYiGvir6PcJdXj654=
+
+Name: net/codemusic/smartears/ui/MainFrame$6.class
+SHA1-Digest: pbKQVw7sgh40WYQIUNtT9SLNG2k=
+
+Name: net/codemusic/smartears/event/ExcerciseEvent.class
+SHA1-Digest: nYgJp7H7sRpxvm8RuZJmMNvt4qQ=
+
+Name: net/codemusic/smartears/event/ExcerciseAdapter.class
+SHA1-Digest: hI8H1BLzxxUOQaK6sTRCna1bb+0=
+
+Name: net/codemusic/smartears/ui/Keyboard.class
+SHA1-Digest: iehZQIEPzspaHDD1vpIh4By4HMY=
+
+Name: net/codemusic/smartears/Trichords.class
+SHA1-Digest: yaDXAdWR59JQPtpNfDewk4yVGmw=
+
+Name: net/codemusic/smartears/AdvancedChords.class
+SHA1-Digest: WcTXU43Ac/h+NDSZ3M1js0m/TaY=
+
+Name: sounds/incorrect.wav
+SHA1-Digest: WXQA7hN5MtSXThkc9bEWGnZAZ1I=
+
+Name: net/codemusic/smartears/event/IExcerciseEventManager.class
+SHA1-Digest: 9FFVczcFO0D9BC9AUBNolDvrZjo=
+
+Name: net/codemusic/smartears/ExampleManager.class
+SHA1-Digest: 2GYF0TYgfckDcu4PAmq7PR8tqjA=
+
+Name: net/codemusic/smartears/AnswerStrategySetter.class
+SHA1-Digest: 7YCcNJGBJt8gz2oENsKHQtBzVJA=
+
+Name: net/codemusic/smartears/SmartEars$3.class
+SHA1-Digest: VxLhygBniT9PadMgwRnB6/zLB/4=
+
+Name: net/codemusic/smartears/IScore.class
+SHA1-Digest: qsCo5WNsdAqJzc8XyxvXTbQ62zs=
+
+Name: net/codemusic/smartears/BasicAnswer.class
+SHA1-Digest: yY/thpAYyVbCiYi3lCD8qzaYBR4=
+
+Name: net/codemusic/smartears/event/PlayEvent.class
+SHA1-Digest: xNzt6WKDQiAg7XiCjJ4+5OA68bs=
+
+Name: net/codemusic/smartears/event/EventManager.class
+SHA1-Digest: q7nBv+KUCMtrxr0fWw4LYiGcZHo=
+
+Name: net/codemusic/smartears/ui/MainFrame$16.class
+SHA1-Digest: G/R2kGeD90OYjZ9B4gB2XXbnYqo=
+
+Name: net/codemusic/Strategy.class
+SHA1-Digest: V+RDbFQs3Ys6Tx7wECMcD3UA9cw=
+
+Name: net/codemusic/smartears/ISoundEngine.class
+SHA1-Digest: F3EtcqqNk9tXITptCubdLMgLjuo=
+
+Name: net/codemusic/smartears/ui/MainFrame$10.class
+SHA1-Digest: /p8xcgU5iC9/XMW9VNOEyOGDDCo=
+
+Name: net/codemusic/smartears/BasicChords.class
+SHA1-Digest: hE7/dRZbSXxcJdZ5dj3x9cerF2A=
+
+Name: net/codemusic/smartears/event/ISettingsEventManager.class
+SHA1-Digest: crw9odeCpeccKiHjgjjwFNYBBuQ=
+
+Name: net/codemusic/smartears/event/SettingsEvent.class
+SHA1-Digest: K1Gz+WV23bpc+gysajo+I9G4d1A=
+
+Name: net/codemusic/smartears/ui/MainFrame$22.class
+SHA1-Digest: hZF52NkBLC6YlubovfA8buhWn6k=
+
+Name: net/codemusic/smartears/SmartEars$2.class
+SHA1-Digest: fMP+FewUTNpxE2k+8I/HAnHNIiA=
+
+Name: net/codemusic/smartears/IExcercise.class
+SHA1-Digest: seCuzip4AyWClxHJlis/BuI7JnE=
+
+Name: net/codemusic/smartears/event/ExampleEvent.class
+SHA1-Digest: fIRM/GRyLC+GCeD60kGt0uICkqE=
+
+Name: net/codemusic/smartears/event/IExampleEventManager.class
+SHA1-Digest: lzo42HN9s8vyYQ6ZoxZGIQTrmDs=
+
+Name: net/codemusic/smartears/ui/Keyboard$1.class
+SHA1-Digest: bXDZwtAOr/pq6g3ws1CQasx6+5g=
+
+Name: net/codemusic/smartears/IAnswerManager.class
+SHA1-Digest: PmLPqsTGryzFNr8Up2JpvcRAiyU=
+
+Name: net/codemusic/smartears/ui/MainFrame$15.class
+SHA1-Digest: tRqe2xBplFO8lbfxQ+ATYquHYyg=
+
+Name: net/codemusic/smartears/event/ExampleAdapter.class
+SHA1-Digest: k3EfsCIifyOVXklvTByBY09qBIc=
+
+Name: net/codemusic/smartears/IRangeManager.class
+SHA1-Digest: KvV+hA594nQEqHjGcRHJQ5yBBGk=
+
+Name: net/codemusic/smartears/BasicScales.class
+SHA1-Digest: xymuDdjbnJuu//2B6nTvzcqapSI=
+
+Name: net/codemusic/smartears/ui/MainFrame$5.class
+SHA1-Digest: uXehy/rhaLbzBfxBMjM6QJXAlR4=
+
+Name: net/codemusic/smartears/ISettingsManager.class
+SHA1-Digest: C5moguD8G1Ju720AU/nh+4QgCVY=
+
+Name: net/codemusic/smartears/ISoundEngineVisitor.class
+SHA1-Digest: XLBRSs3UtJfg9MpaZXY98tzInlk=
+
+Name: net/codemusic/smartears/ui/MainFrame$14.class
+SHA1-Digest: Wz55ahG1BEhXkkIAdW2ZEdNNGt0=
+
+Name: net/codemusic/smartears/IController.class
+SHA1-Digest: gFx/u79m4226lhdtuiX9Tw/w/+o=
+
+Name: net/codemusic/smartears/IExcerciseManager.class
+SHA1-Digest: mKDADSZEE2Iv5Jt6YxCe5tuEO0w=
+
+Name: net/codemusic/smartears/ui/MainFrame$4.class
+SHA1-Digest: X1qxzQ/Lt84tHG+wePCPo65/BKw=
+
+Name: net/codemusic/smartears/AnswerManager$3.class
+SHA1-Digest: kmHS+bFx2wJ39fFostKXWB5wP7A=
+
+Name: net/codemusic/smartears/ui/MainFrame$21.class
+SHA1-Digest: R0tmYuyOc10iTwiTJ6BqLuFEveQ=
+
+Name: net/codemusic/smartears/SmartEars$1.class
+SHA1-Digest: S1GDGGGk6vxxdTC4u61PuMwfjOM=
+
+Name: net/codemusic/smartears/ISettings.class
+SHA1-Digest: eptVU98xfjdHZ+YSPbe3cJIynzU=
+
+Name: net/codemusic/smartears/MidiSoundEngine.class
+SHA1-Digest: dS9Q8UtMVbMgYA1hwCtW5F0sgxw=
+
+Name: net/codemusic/smartears/BasicAnswer$3.class
+SHA1-Digest: h9KsnGorSUPY0TFTZgQCBtmf238=
+
+Name: net/codemusic/smartears/ui/MainFrame$19.class
+SHA1-Digest: q0dPl61Q58QisSVabbrhIE0hg0c=
+
+Name: net/codemusic/smartears/RangeManager.class
+SHA1-Digest: 7zjEclH2dDouh2MidVvRGTm7NeY=
+
+Name: net/codemusic/smartears/ui/MainFrame$9.class
+SHA1-Digest: Yoo5j1iFPNXsWVtM0VVMmD1ULAM=
+

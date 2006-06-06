@@ -1,0 +1,104 @@
+package net.codemusic.smartears;
+
+/**
+ * Title:        smartears
+ * Description:
+ * Copyright:    Copyright (c) 2001
+ * Company:      codemusic.net
+ * @author Peter Lyons
+ * @version 1.0
+ */
+import javax.sound.midi.*;
+import java.io.*;
+
+public class MidiTest1 {
+  /*public static void main(String[] args) {
+  try
+  {
+  PrintStream o = System.out;
+    MidiDevice.Info[] mdi = MidiSystem.getMidiDeviceInfo();
+    //mdi = null;
+    for(int i=0; i<mdi.length;i++)
+      {
+	o.println("Device "+i);
+	o.println("\t"+mdi[i].getName());
+	o.println("\t"+mdi[i].getDescription());
+	o.println("\t"+mdi[i].getVendor());
+	o.println("\t"+mdi[i].getVersion());
+      }
+    MidiDevice.Info info = MidiSystem.getMidiDeviceInfo()[0];
+  MidiDevice dev = MidiSystem.getMidiDevice(info);
+  Receiver rec = dev.getReceiver();
+  dev.open();
+  ShortMessage msg1 = new ShortMessage();
+  msg1.setMessage(ShortMessage.NOTE_ON, 0, 60, 70);
+  rec.send(msg1, -1);
+  rec.close();
+  dev.close();
+  System.exit(0);
+  }
+  catch(Exception e)
+  {
+    e.printStackTrace();
+  }
+
+  }*/
+  public static void main(String[] args)
+  {
+  try
+  {
+  PrintStream o = System.out;
+    MidiDevice.Info[] mdi = MidiSystem.getMidiDeviceInfo();
+    for(int i=0; i<mdi.length;i++)
+      {
+	o.println("Device "+i);
+	o.println("\t"+mdi[i].getName());
+	o.println("\t"+mdi[i].getDescription());
+	o.println("\t"+mdi[i].getVendor());
+	o.println("\t"+mdi[i].getVersion());
+      }
+  MidiDevice dev = MidiSystem.getMidiDevice(mdi[0]);
+  if(dev instanceof Synthesizer)
+  {
+  o.println("We have a synth");
+  }
+  else
+  {
+  o.println("no synth");
+  }
+  Synthesizer synth = MidiSystem.getSynthesizer();
+  synth.open();
+Instrument[] insts =  synth.getAvailableInstruments();
+
+//synth.loadInstrument(insts[251]);
+MidiChannel channel = synth.getChannels()[0];
+channel.programChange(124);
+Receiver rec = synth.getReceiver();
+ShortMessage msg1 = new ShortMessage();
+  msg1.setMessage(ShortMessage.NOTE_ON, 0, 72, 70);
+  rec.send(msg1, -1);
+for(int i=0;i<insts.length;i++)
+{
+  o.println(i+": "+insts[i].getName());
+}
+System.in.read();
+rec.close();
+synth.close();
+  System.exit(0);
+  /*Sequencer sequencer = MidiSystem.getSequencer();
+  sequencer.open();
+  Sequence sequence = new Sequence(Sequence.PPQ, 1);
+  Track track = sequence.createTrack();
+  ShortMessage msg1 = new ShortMessage();
+  msg1.setMessage(ShortMessage.NOTE_ON, 0, 80, 70);
+  MidiEvent event1 = new MidiEvent(msg1, 0);
+  track.add(event1);
+  sequencer.setSequence(sequence);
+  System.out.println("about to start the sequencer");
+  sequencer.start();
+  //sequencer.close();*/
+  //System.exit(0);
+  }
+  catch(Exception e) {e.printStackTrace();}
+  }
+}

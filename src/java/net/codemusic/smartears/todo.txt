@@ -1,0 +1,44 @@
+Melodic Patterns TODO's
+-shift-click for sharp
+-right click for flat
+-drawing of "#" and "b"
+-code cleanup
+-incorporate code into main code body
+
+
+-figure out button strategies - what they are and who sets them
+-Excercise where it establishes a key, then plays a note, and you say
+-where the note lies in the key
+
+-figure out more events
+-change collection used in AnswerManager to a Set of some kind
+-find and squash bug where there is no correct answer occasionally
+-fix preferredSive messyness in Keyboard and tidy up the Settings Panel
+-create a mechanism by which users can define their own IAnswers and IExcercises
+-update method names in eventManager and relevant interfaces to not have the word Event in them and to be descriptive of what just happened
+-allow the score panel to be customized via a popup menu
+-figure out why answer.toArray() can't be cast to IAnswer[]
+-implement chords as 1-dimensional arrays and have them
+	   use the timing settings to be played harmonically 
+	   just like the intervals
+-fix MIDI dependencies in Settings classes 
+
+-fix dependencies on javax.sound.midi.Instrument
+-work with layout so changes in the number of digits in the score
+don't move or resize the buttons
+-add exception handling capabilities to the Settings system
+-assign 0-9 as keyboard shortcuts and use shift for 10+
+-turn all of the main program events into Action classes (?)
+-figure out optimal sequence division type and resolution
+-robustify MidiSoundEngine
+-decide how you are going to switch between melodic and harmonic playback of intervals and chords.  (Different classes) - maybe just call getStructure() on all of them and take the first row and make it verticle and then call setStructure()
+-go through all classes and make them Thread Safe
+-make classes Serializable where possible
+
+Done:
+-create a MIDI sound engine tha can play int[][]s
+-make RangeManager class.
+-have IScoreKeeper register event listeners 
+-event system for lots of events (status, score, adjustment)?
+-have all Events top level classes extend java.util.eventObject
+-figure out how BasicAnswer should dispatch score events

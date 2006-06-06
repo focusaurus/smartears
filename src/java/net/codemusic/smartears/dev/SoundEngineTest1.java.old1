@@ -1,0 +1,26 @@
+package net.codemusic.smartears;
+
+public class SoundEngineTest1
+{
+  public static void main(String[] args)
+  {
+    int[][] structure = {{12,7,0},{16,11,4}, {19,14,7}};
+    IAnswer answer = new BasicAnswer(structure);
+    answer.setName("major Arpeggio");
+    try
+      {
+	ISoundEngine se = new MidiSoundEngine();
+	Intervals ints = new Intervals();
+	se.play(ints.getAnswers()[11]);
+	System.out.println("hit ENTER when sound stops");
+	System.in.read();    
+	se.close();
+      }
+    catch(Exception e)
+      {
+	e.printStackTrace();
+      }
+    
+    System.exit(0);
+  }
+}
