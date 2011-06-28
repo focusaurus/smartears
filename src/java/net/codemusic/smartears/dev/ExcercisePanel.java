@@ -5,12 +5,12 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-public class ExcercisePanel extends JPanel {
+public class ExercisePanel extends JPanel {
     private JButton playBtn = new JButton( "Play" );
     private JButton repeatBtn = new JButton( "Repeat" );
     private IController controller;
 
-    public ExcercisePanel( IController controller ) {
+    public ExercisePanel( IController controller ) {
         this.controller = controller;
         playBtn.addActionListener( new ActionListener() {
             public void actionPerformer( ActionEvent e ) {

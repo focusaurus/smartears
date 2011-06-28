@@ -3,10 +3,10 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- *This IExcercise tests identification of melodic patterns
+ *This IExercise tests identification of melodic patterns
  *(Any series of notes, not necessarily "melodic")
  */
-public class MelodicPatterns implements IReproductionExcercise {
+public class MelodicPatterns implements IReproductionExercise {
     protected IAnswer[] answers = new IAnswer[0];
     protected IScoreManager scoreManager;
 
@@ -19,21 +19,21 @@ public class MelodicPatterns implements IReproductionExcercise {
     }
 
     /**
-     *@see IExcercise#getName()
+     *@see IExercise#getName()
      */
     public String getName() {
         return "Melodic Patterns";
     }
 
     /**
-     *@see IExcercise#getDescription()
+     *@see IExercise#getDescription()
      */
     public String getDescription() {
         return "Any series of single notes";
     }
 
     /**
-     *@see IReproductionExcercise#getNextAnswer()
+     *@see IReproductionExercise#getNextAnswer()
      */
     public IAnswer getNextAnswer() {
         return null;

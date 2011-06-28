@@ -41,7 +41,7 @@ class InstrumentRenderer extends DefaultListCellRenderer {
  *for SmartEars
  */
 public class MainFrame extends JFrame implements ScoreListener,
-                                                 ExcerciseListener {
+                                                 ExerciseListener {
     private Instrument[] instruments;
     private JLabel correctLabel = new JLabel( "0" );
     private JLabel incorrectLabel = new JLabel( "0" );
@@ -52,8 +52,8 @@ public class MainFrame extends JFrame implements ScoreListener,
     private JPanel mainPanel = new JPanel( new BorderLayout() );
     private JPanel answerPanel;
     private JMenuBar jMenuBar1 = new JMenuBar();
-    private JMenu excerciseMenu = new JMenu( "Excercise" );
-    private JMenuItem excerciseMenuExit = new JMenuItem( "Exit" );
+    private JMenu exerciseMenu = new JMenu( "Exercise" );
+    private JMenuItem exerciseMenuExit = new JMenuItem( "Exit" );
     //  private JMenu jMenuHelp = new JMenu("Help");
     // private JMenuItem jMenuHelpAbout = new JMenuItem("About");
     private JSlider delaySlider;
@@ -96,7 +96,7 @@ public class MainFrame extends JFrame implements ScoreListener,
         } );
         instruments = controller.getInstruments();
         controller.getScoreEventManager().addScoreListener( this );
-        controller.getExcerciseEventManager().addExcerciseListener( this );
+        controller.getExerciseEventManager().addExerciseListener( this );
         try {
             correctAIS = AudioSystem.getAudioInputStream( getClass().getClassLoader().getResource( 
                                                                   "sounds/correct.wav" ) );
@@ -160,7 +160,7 @@ public class MainFrame extends JFrame implements ScoreListener,
         getContentPane().setLayout( new BorderLayout() );
         getContentPane().add( createExamplePanel(), BorderLayout.NORTH );
         tabbedPane.add( "Main", 
-                        createMainPanel( controller.getExcercises()[0] ) );
+                        createMainPanel( controller.getExercises()[0] ) );
         tabbedPane.add( "Settings", createSettingsPanel() );
         tabbedPane.getInputMap( JComponent.WHEN_IN_FOCUSED_WINDOW ).put( KeyStroke.getKeyStroke( 
                                                                                  'm' ), 
@@ -170,9 +170,9 @@ public class MainFrame extends JFrame implements ScoreListener,
                                                                          "showSettingsPanel" );
         getContentPane().add( tabbedPane, BorderLayout.CENTER );
         this.setTitle( "SmartEars" );
-        excerciseMenuExit.addActionListener( new ActionListener() {
+        exerciseMenuExit.addActionListener( new ActionListener() {
             public void actionPerformed( ActionEvent e ) {
-                excerciseMenuExit_actionPerformed( e );
+                exerciseMenuExit_actionPerformed( e );
             }
         } );
         // jMenuHelpAbout.addActionListener(new ActionListener()
@@ -182,10 +182,10 @@ public class MainFrame extends JFrame implements ScoreListener,
         //  jMenuHelpAbout_actionPerformed(e);
         //}
         //});
-        populateSmartEarsMenu( controller.getExcercises() );
-        excerciseMenu.add( excerciseMenuExit );
+        populateSmartEarsMenu( controller.getExercises() );
+        exerciseMenu.add( exerciseMenuExit );
         //  jMenuHelp.add(jMenuHelpAbout);
-        jMenuBar1.add( excerciseMenu );
+        jMenuBar1.add( exerciseMenu );
         // jMenuBar1.add(jMenuHelp);
         this.setJMenuBar( jMenuBar1 );
         controller.getScoreEventManager().addScoreListener( new ScoreAdapter() {
@@ -266,10 +266,10 @@ public class MainFrame extends JFrame implements ScoreListener,
         examplePanel.add( statusLabel, BorderLayout.NORTH );
         return examplePanel;
     }
-    private JPanel createAnswerPanel( final IExcercise excercise ) {
+    private JPanel createAnswerPanel( final IExercise exercise ) {
         JPanel answerPanel = new JPanel( new BorderLayout() );
-        if ( excercise instanceof IRecognitionExcercise ) {
-            IAnswer[] answers = ( (IRecognitionExcercise)excercise ).getAnswers();
+        if ( exercise instanceof IRecognitionExercise ) {
+            IAnswer[] answers = ( (IRecognitionExercise)exercise ).getAnswers();
             JLabel buttonHint = new JLabel( 
                                         "Right click buttons to enable/disable particular answers" );
             answerPanel.add( buttonHint, BorderLayout.SOUTH );
@@ -295,8 +295,8 @@ public class MainFrame extends JFrame implements ScoreListener,
                 buttonPanel.add( buttons[i], gbc );
             }
             answerPanel.add( buttonPanel, BorderLayout.CENTER );
-        } else if ( excercise instanceof IReproductionExcercise ) {
-            JLabel buttonHint = new JLabel( 
+        } else if ( exercise instanceof IReproductionExercise ) {
+            /*JLabel buttonHint = new JLabel( 
                                         "Type your midi values separated by spaces and hit \"Guess\"" );
             answerPanel.add( buttonHint, BorderLayout.SOUTH );
             JPanel buttonPanel = new JPanel();
@@ -316,6 +316,7 @@ public class MainFrame extends JFrame implements ScoreListener,
             //BUGBUG clean this up - do it elsewhere
             SmartEars.getInstance().getRangeManager().setUpperBound(73);
             SmartEars.getInstance().getRangeManager().setLowerBound(57);
+            */
         }
         return answerPanel;
     }
@@ -426,8 +427,8 @@ public class MainFrame extends JFrame implements ScoreListener,
         } //end big button init loop
         return buttons;
     }
-    private JPanel createMainPanel( final IExcercise excercise ) {
-        answerPanel = createAnswerPanel( excercise );
+    private JPanel createMainPanel( final IExercise exercise ) {
+        answerPanel = createAnswerPanel( exercise );
         mainPanel.add( answerPanel, BorderLayout.CENTER );
         JPanel scorePanel = new JPanel( new BorderLayout() );
         JPanel labelPanel = new JPanel( new GridLayout( 4, 1, 0, 3 ) );
@@ -637,26 +638,26 @@ public class MainFrame extends JFrame implements ScoreListener,
     }
 
     /**
-     * Takes all excercises and makes a JRadioButtonMenuItem for each of the,
+     * Takes all exercises and makes a JRadioButtonMenuItem for each of the,
      * adds them to a ButtonGroup, and puts them on the SmartEars menu
      */
-    private void populateSmartEarsMenu( IExcercise[] excercises ) {
+    private void populateSmartEarsMenu( IExercise[] exercises ) {
         ButtonGroup group = new ButtonGroup();
-        for ( int i = 0; i < excercises.length; i++ ) {
-            final IExcercise excercise = excercises[i];
-            JRadioButtonMenuItem mi = new JRadioButtonMenuItem( excercise.getName() );
+        for ( int i = 0; i < exercises.length; i++ ) {
+            final IExercise exercise = exercises[i];
+            JRadioButtonMenuItem mi = new JRadioButtonMenuItem( exercise.getName() );
             group.add( mi );
             mi.addActionListener( new ActionListener() {
                 public void actionPerformed( ActionEvent e ) {
-                    controller.getExcerciseManager().excerciseChanged( 
-                            excercise );
+                    controller.getExerciseManager().exerciseChanged( 
+                            exercise );
                 }
             } );
-            mi.setToolTipText( excercise.getDescription() );
+            mi.setToolTipText( exercise.getDescription() );
             if ( i == 0 ) {
                 mi.setSelected( true );
             }
-            excerciseMenu.add( mi );
+            exerciseMenu.add( mi );
         }
     }
 
@@ -715,18 +716,18 @@ public class MainFrame extends JFrame implements ScoreListener,
     }
 
     /**
-     *Updates the answer panel to have buttons for the new IExcercise
+     *Updates the answer panel to have buttons for the new IExercise
      */
-    public void excerciseChanged( ExcerciseEvent e ) {
+    public void exerciseChanged( ExerciseEvent e ) {
         mainPanel.remove( answerPanel );
-        answerPanel = createAnswerPanel( e.getExcercise() );
+        answerPanel = createAnswerPanel( e.getExercise() );
         mainPanel.add( answerPanel, BorderLayout.CENTER );
         //initializes the timings settings for scales nicely
-        if ( e.getExcercise().getName().toLowerCase().indexOf( "scale" ) > -1 ) {
+        if ( e.getExercise().getName().toLowerCase().indexOf( "scale" ) > -1 ) {
             delaySlider.setValue( 5 );
             durationSlider.setValue( 5 );
         }
-        if ( e.getExcercise() instanceof MelodicPatterns ) {
+        if ( e.getExercise() instanceof MelodicPatterns ) {
             controller.getAnswerManager().setSelectionStrategy( new MelodicPatternFactoryStrategy() );
         } else {
             controller.getAnswerManager().setSelectionStrategy( new RandomStrategy() );
@@ -734,7 +735,7 @@ public class MainFrame extends JFrame implements ScoreListener,
     }
 
     /**File | Exit action performed*/
-    public void excerciseMenuExit_actionPerformed( ActionEvent e ) {
+    public void exerciseMenuExit_actionPerformed( ActionEvent e ) {
         controller.shutdown();
     }
 
@@ -756,7 +757,7 @@ public class MainFrame extends JFrame implements ScoreListener,
     protected void processWindowEvent( WindowEvent e ) {
         super.processWindowEvent( e );
         if ( e.getID() == WindowEvent.WINDOW_CLOSING ) {
-            excerciseMenuExit_actionPerformed( null );
+            exerciseMenuExit_actionPerformed( null );
         }
     }
 }

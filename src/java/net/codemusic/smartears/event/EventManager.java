@@ -13,11 +13,11 @@ import net.codemusic.smartears.*;
 public class EventManager implements IExampleEventManager,
                                      IScoreEventManager,
                                      ISettingsEventManager,
-                                     IExcerciseEventManager {
+                                     IExerciseEventManager {
     private Vector exampleListeners = new Vector( 25 );
     private Vector scoreListeners = new Vector( 3 );
     private Vector settingsListeners = new Vector( 3 );
-    private Vector excerciseListeners = new Vector( 3 );
+    private Vector exerciseListeners = new Vector( 3 );
 
     public void addExampleListener( ExampleListener e ) {
         if ( SmartEars.DEBUGGING_ENABLED ) {
@@ -33,17 +33,17 @@ public class EventManager implements IExampleEventManager,
         }
         exampleListeners.remove( e );
     }
-    public void addExcerciseListener( ExcerciseListener e ) {
+    public void addExerciseListener( ExerciseListener e ) {
         if ( SmartEars.DEBUGGING_ENABLED ) {
-            System.out.println( "EventManager.addExcerciseListener()" );
+            System.out.println( "EventManager.addExerciseListener()" );
         }
-        excerciseListeners.add( e );
+        exerciseListeners.add( e );
     }
-    public void removeExcerciseListener( ExcerciseListener e ) {
+    public void removeExerciseListener( ExerciseListener e ) {
         if ( SmartEars.DEBUGGING_ENABLED ) {
-            System.out.println( "EventManager.removeExcerciseListener()" );
+            System.out.println( "EventManager.removeExerciseListener()" );
         }
-        excerciseListeners.remove( e );
+        exerciseListeners.remove( e );
     }
     public void addScoreListener( ScoreListener e ) {
         if ( SmartEars.DEBUGGING_ENABLED ) {
@@ -113,12 +113,12 @@ public class EventManager implements IExampleEventManager,
             ( (ScoreListener)scoreListeners.elementAt( i ) ).correct( e );
         }
     }
-    public void processExcerciseChanged( ExcerciseEvent e ) {
+    public void processExerciseChanged( ExerciseEvent e ) {
         if ( SmartEars.DEBUGGING_ENABLED ) {
-            System.out.println( "EventManager.processExcerciseEvent()" );
+            System.out.println( "EventManager.processExerciseEvent()" );
         }
-        for ( int i = 0; i < excerciseListeners.size(); i++ ) {
-            ( (ExcerciseListener)excerciseListeners.elementAt( i ) ).excerciseChanged( 
+        for ( int i = 0; i < exerciseListeners.size(); i++ ) {
+            ( (ExerciseListener)exerciseListeners.elementAt( i ) ).exerciseChanged( 
                     e );
         }
     }

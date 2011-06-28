@@ -33,8 +33,8 @@ public class SmartEars implements IController {
     private EventManager eventManager = new EventManager();
     private IAnswerManager answerManager;
     private IExampleManager exampleManager;
-    private IExcerciseManager excerciseManager;
-    private IExcercise[] excercises;
+    private IExerciseManager exerciseManager;
+    private IExercise[] exercises;
     private Instrument[] instruments;
     private IRangeManager rangeManager = new RangeManager();
     private IScoreManager scoreManager;
@@ -73,22 +73,22 @@ public class SmartEars implements IController {
         }
         //the answerStrategySetter tells the chosen answer that it is correct
         //    eventManager.addExampleListener(new AnswerStrategySetter());
-        excerciseManager = new ExcerciseManager( eventManager );
+        exerciseManager = new ExerciseManager( eventManager );
         answerManager = new AnswerManager( eventManager, eventManager );
         scoreManager = new ScoreManager( eventManager, eventManager );
-        //Create all of the Excercises
-        IExcercise[] allExcercises = {
+        //Create all of the Exercises
+        IExercise[] allExercises = {
             new Intervals(), new BasicScales(), 
             //new MelodicPatterns( scoreManager ), 
             new BasicChords(), new Trichords(), 
             new AdvancedChords( scoreManager )
         };
-        excercises = allExcercises;
-        IAnswer[] answers = ( (IRecognitionExcercise)excercises[0] ).getAnswers();
+        exercises = allExercises;
+        IAnswer[] answers = ( (IRecognitionExercise)exercises[0] ).getAnswers();
         instruments = soundEngine.getInstruments();
         exampleManager = new ExampleManager( eventManager, answerManager, 
                                              rangeManager );
-        //tell the AnswerManager about all of the answers to the first excercise
+        //tell the AnswerManager about all of the answers to the first exercise
         for ( int i = 0; i < answers.length; i++ ) {
             answerManager.add( answers[i] );
         }
@@ -117,26 +117,26 @@ public class SmartEars implements IController {
                 soundEngine.setInstrument( e.getSettings().getInstrument() );
             }
         } );
-        //keeps the answer manager's answers in sync with the current excercise
-        eventManager.addExcerciseListener( new ExcerciseListener() {
-            public void excerciseChanged( ExcerciseEvent e ) {
-                IExcercise excercise = e.getExcercise();
-                if ( excercise instanceof IRecognitionExcercise ) {
+        //keeps the answer manager's answers in sync with the current exercise
+        eventManager.addExerciseListener( new ExerciseListener() {
+            public void exerciseChanged( ExerciseEvent e ) {
+                IExercise exercise = e.getExercise();
+                if ( exercise instanceof IRecognitionExercise ) {
                     answerManager.removeAll();
-                    IAnswer[] answers = ( (IRecognitionExcercise)excercise ).getAnswers();
+                    IAnswer[] answers = ( (IRecognitionExercise)exercise ).getAnswers();
                     for ( int i = 0; i < answers.length; i++ ) {
                         answerManager.add( answers[i] );
                     }
                 }
             }
         } );
-        //Use Ascending order only for ReproductionExcercises
-        eventManager.addExcerciseListener( new ExcerciseListener() {
-            public void excerciseChanged( ExcerciseEvent e ) {
-                IExcercise excercise = e.getExcercise();
-                if ( excercise instanceof IReproductionExcercise ) {
+        //Use Ascending order only for ReproductionExercises
+        eventManager.addExerciseListener( new ExerciseListener() {
+            public void exerciseChanged( ExerciseEvent e ) {
+                IExercise exercise = e.getExercise();
+                if ( exercise instanceof IReproductionExercise ) {
                     System.out.println( 
-                            "Excercise changed to " + excercise.getName() );
+                            "Exercise changed to " + exercise.getName() );
                     getSettingsManager().playModeChanged( ISettings.ASCENDING );
                 }
             }
@@ -167,22 +167,22 @@ public class SmartEars implements IController {
     /**
      *@see IController
      */
-    public IExcerciseManager getExcerciseManager() {
-        return excerciseManager;
+    public IExerciseManager getExerciseManager() {
+        return exerciseManager;
     }
 
     /**
      *@see IController
      */
-    public IExcerciseEventManager getExcerciseEventManager() {
+    public IExerciseEventManager getExerciseEventManager() {
         return eventManager;
     }
 
     /**
      *@see IController
      */
-    public IExcercise[] getExcercises() {
-        return excercises;
+    public IExercise[] getExercises() {
+        return exercises;
     }
 
     /**

@@ -40,7 +40,7 @@ public class Demo1 {
             System.exit( 0 );
         }
         console = new BufferedReader( new InputStreamReader( System.in ) );
-        IExcercise intervals = new Intervals();
+        IExercise intervals = new Intervals();
         answers = intervals.getAnswers();
         ansMan = new AnswerManager();
         for ( int i = 0; i < answers.length; i++ ) {
@@ -56,7 +56,7 @@ public class Demo1 {
         out.println( "Let's identify some intervals!\ntype q to quit" );
         String command = "";
         while ( ! "q".equals( command ) ) {
-            playExcercise();
+            playExercise();
             try {
                 command = console.readLine();
                 if ( ! "q".equals( command ) ) {
@@ -71,7 +71,7 @@ public class Demo1 {
             }
         }
     }
-    private void playExcercise() {
+    private void playExercise() {
         out.println( "How many half steps is this?" );
         try {
             final IAnswer ans = ansMan.select();

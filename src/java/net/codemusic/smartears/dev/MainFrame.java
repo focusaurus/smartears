@@ -93,7 +93,7 @@ public class MainFrame extends JFrame {
         contentPane.add( examplePanel, BorderLayout.NORTH );
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.add( "Main", 
-                        createMainPanel( Controller.getExcercise().getAnswers() ) );
+                        createMainPanel( Controller.getExercise().getAnswers() ) );
         tabbedPane.add( "Settings", createSettingsPanel() );
         contentPane.add( tabbedPane, BorderLayout.CENTER );
         this.setSize( new Dimension( 400, 300 ) );
@@ -113,7 +113,7 @@ public class MainFrame extends JFrame {
         jMenuBar1.add( jMenuFile );
         jMenuBar1.add( jMenuHelp );
         this.setJMenuBar( jMenuBar1 );
-        //contentPane.add(new ExcercisePanel(), BorderLayout.CENTER);
+        //contentPane.add(new ExercisePanel(), BorderLayout.CENTER);
         contentPane.add( statusBar, BorderLayout.SOUTH );
     }
     private JPanel createMainPanel( final IAnswer[] answers ) {

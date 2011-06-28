@@ -3,13 +3,13 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- * This class is an Excercise that works with the 4 basic triads and the 5 most
+ * This class is an Exercise that works with the 4 basic triads and the 5 most
  * common 7th chords
  *
  *@author    plyons
  *@created   December 28, 2002
  */
-public class BasicChords implements IRecognitionExcercise {
+public class BasicChords implements IRecognitionExercise {
     
     private String[] names = {
         "Major Triad", "Minor Triad", "Diminished Triad", "Augmented Triad",
@@ -30,7 +30,7 @@ public class BasicChords implements IRecognitionExcercise {
     private IAnswer[] answers = new IAnswer[names.length];
 
     /**
-     * Creates a new BasicChords IExcercise that will communicate with the
+     * Creates a new BasicChords IExercise that will communicate with the
      * supplied ScoreManager
      */
     public BasicChords() {
@@ -44,7 +44,7 @@ public class BasicChords implements IRecognitionExcercise {
 
     /**
      *@return   The name value
-     *@see      IExcercise#getName()
+     *@see      IExercise#getName()
      */
     public String getName() {
         return "Basic Chords";
@@ -52,7 +52,7 @@ public class BasicChords implements IRecognitionExcercise {
 
     /**
      *@return   The description value
-     *@see      IExcercise#getDescription()
+     *@see      IExercise#getDescription()
      */
     public String getDescription() {
         return "Triads and common seventh chords";
@@ -60,7 +60,7 @@ public class BasicChords implements IRecognitionExcercise {
 
     /**
      *@return   The answers value
-     *@see      IExcercise#getAnswers()
+     *@see      IExercise#getAnswers()
      */
     public IAnswer[] getAnswers() {
         return answers;
