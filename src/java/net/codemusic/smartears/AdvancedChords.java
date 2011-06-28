@@ -13,12 +13,12 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- *This class is an Excercise that works with 
+ *This class is an Exercise that works with 
  *more sophisticated types of 4 and 5 note chords
  *
  *@author Peter Lyons
  */
-public class AdvancedChords implements IRecognitionExcercise {
+public class AdvancedChords implements IRecognitionExercise {
     //turning off log4j for now
     //private static org.apache.log4j.Category log4j = org.apache.log4j.Category.getInstance( AdvancedChords.class.getName() );
     private String[] names = {
@@ -37,7 +37,7 @@ public class AdvancedChords implements IRecognitionExcercise {
     private IAnswer[] answers = new IAnswer[names.length];
 
     /**
-     *Creates a new AdvancedChords IExcercise that will
+     *Creates a new AdvancedChords IExercise that will
      *communicate with the supplied ScoreManager
      */
     public AdvancedChords( IScoreManager sm ) {
@@ -50,21 +50,21 @@ public class AdvancedChords implements IRecognitionExcercise {
     }
 
     /**
-     *@see IExcercise#getName()
+     *@see IExercise#getName()
      */
     public String getName() {
         return "Advanced Chords";
     }
 
     /**
-     *@see IExcercise#getDescription()
+     *@see IExercise#getDescription()
      */
     public String getDescription() {
         return "More complicated 4 and 5 note chords common in jazz";
     }
 
     /**
-     *@see IExcercise#getAnswers()
+     *@see IExercise#getAnswers()
      */
     public IAnswer[] getAnswers() {
         return answers;

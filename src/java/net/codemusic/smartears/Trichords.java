@@ -3,11 +3,11 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- *This IExcercise tests recognition of Trichords, 
+ *This IExercise tests recognition of Trichords, 
  *which are three note groupings distinguished by their intervalic content.
  *Trichords are used often in analyzing certain types of serial music
  */
-public class Trichords implements IRecognitionExcercise {
+public class Trichords implements IRecognitionExercise {
     private String[] names = {
         "{0,1,2}", "{0,1,3}", "{0,1,4}", "{0,1,5}", "{0,1,6}", "{0,2,4}", 
         "{0,2,5}", "{0,2,6}", "{0,2,7}", "{0,3,6}", "{0,3,7}", "{0,4,7}", 
@@ -39,21 +39,21 @@ public class Trichords implements IRecognitionExcercise {
     }
 
     /**
-   *@see IExcercise#getName()
+   *@see IExercise#getName()
    */
     public String getName() {
         return "Trichords";
     }
 
     /**
-   *@see IExcercise#getDescription()
+   *@see IExercise#getDescription()
    */
     public String getDescription() {
         return "Three note groupings";
     }
 
     /**
-   *@see IExcercise#getAnswers()
+   *@see IExercise#getAnswers()
    */
     public IAnswer[] getAnswers() {
         return answers;

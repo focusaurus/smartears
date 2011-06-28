@@ -3,10 +3,10 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- *This IExcercise tests the basic 2-note intervals up to 
+ *This IExercise tests the basic 2-note intervals up to 
  *one octave
  */
-public class Intervals implements IRecognitionExcercise {
+public class Intervals implements IRecognitionExercise {
     private String[] names = {
         "Perfect Unison", "Minor Second", "Major Second", "Minor Third", 
         "Major Third", "Perfect Fourth", "Augmented Fourth", "Perfect Fifth", 
@@ -34,21 +34,21 @@ public class Intervals implements IRecognitionExcercise {
     }
 
     /**
-   *@see IExcercise#getName()
+   *@see IExercise#getName()
    */
     public String getName() {
         return "Intervals";
     }
 
     /**
-   *@see IExcercise#getDescription()
+   *@see IExercise#getDescription()
    */
     public String getDescription() {
         return "All intervals up to one octave";
     }
 
     /**
-   *@see IExcercise#getAnswers()
+   *@see IExercise#getAnswers()
    */
     public IAnswer[] getAnswers() {
         return answers;

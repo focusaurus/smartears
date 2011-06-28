@@ -19,7 +19,7 @@ public interface IExampleManager {
     public void repeat();
 
     /**
-   *Enables an answer as part of this excercise and eligible for
+   *Enables an answer as part of this exercise and eligible for
    *playing
    */
     public void enableAnswer( IAnswer a );

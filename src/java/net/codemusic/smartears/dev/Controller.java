@@ -11,10 +11,10 @@ public class Controller {
     private static IRangeManager rangeManager = new RangeManager();
     private static IAnswerManager answerManager = new AnswerManager( 
                                                           eventManager );
-    private static IExcerciseManager excerciseManager = new ExcerciseManager();
+    private static IExerciseManager exerciseManager = new ExerciseManager();
     private static IExampleManager exampleManager = new ExampleManager( 
                                                             eventManager );
-    private static IExcercise excercise = new Intervals();
+    private static IExercise exercise = new Intervals();
     //starts the Singleton pattern at class load time
     private static Controller controller = new Controller();
     public static final boolean DEBUGGING_ENABLED = true;
@@ -28,7 +28,7 @@ public class Controller {
                     "Unable to access your system's MIDI functionaltiy. Exiting" );
             System.exit( 1 );
         }
-        IAnswer[] answers = excercise.getAnswers();
+        IAnswer[] answers = exercise.getAnswers();
         for ( int i = 0; i < answers.length; i++ ) {
             answerManager.add( answers[i] );
         }
@@ -73,8 +73,8 @@ public class Controller {
     public static IScoreKeeper getScoreKeeper() {
         return scoreKeeper;
     }
-    public static IExcercise getExcercise() {
-        return excercise;
+    public static IExercise getExercise() {
+        return exercise;
     }
     public static IExampleEventManager getExampleEventManager() {
         return eventManager;
@@ -82,8 +82,8 @@ public class Controller {
     public static IScoreEventManager getScoreEventManager() {
         return eventManager;
     }
-    public static IExcerciseManager getExcerciseManager() {
-        return excerciseManager;
+    public static IExerciseManager getExerciseManager() {
+        return exerciseManager;
     }
     public static IExampleManager getExampleManager() {
         return exampleManager;

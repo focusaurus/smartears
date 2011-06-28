@@ -4,7 +4,7 @@ package net.codemusic.smartears;
 /**
  *This interface is responsible for managing a user-alterable
  *set of answers.  From this set of answers, it can select the 
- *answer that will be the correct response to the next excercise.
+ *answer that will be the correct response to the next exercise.
  */
 public interface IAnswerManager {
 
@@ -26,7 +26,7 @@ public interface IAnswerManager {
     public void removeAll();
 
     /**
-   *Picks the IAnswer that will be the correct response to the next excercise 
+   *Picks the IAnswer that will be the correct response to the next exercise 
    *according to the current IAnswerSelectionPolicy
    */
     public IAnswer select() throws NoPossibleAnswersException;

@@ -3,11 +3,11 @@ package net.codemusic.smartears;
 import net.codemusic.smartears.event.*;
 
 /**
- *This IExcercise tests recognition of Basic Scales, including
+ *This IExercise tests recognition of Basic Scales, including
  *all of the modes of the major scale and the two additional forms
  *of the minor scale
  */
-public class BasicScales implements IRecognitionExcercise {
+public class BasicScales implements IRecognitionExercise {
     private String[] names = {
         "Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolian", 
         "Locrian", "Harmonic Minor", "Melodic Minor"
@@ -35,21 +35,21 @@ public class BasicScales implements IRecognitionExcercise {
     }
 
     /**
-   *@see IExcercise#getName()
+   *@see IExercise#getName()
    */
     public String getName() {
         return "Basic Scales";
     }
 
     /**
-   *@see IExcercise#getDescription()
+   *@see IExercise#getDescription()
    */
     public String getDescription() {
         return "Modes of the Major Scale plus 3 forms of minor";
     }
 
     /**
-   *@see IExcercise#getAnswers()
+   *@see IExercise#getAnswers()
    */
     public IAnswer[] getAnswers() {
         return answers;

@@ -72,7 +72,7 @@ public class BasicAnswer implements IAnswer {
 
     /**
     *Defines what we do when we are guessed, but this 
-    *excercise has been answered already.
+    *exercise has been answered already.
     */
     private Strategy alreadyCorrectStrat = new Strategy() {
         public void execute() {

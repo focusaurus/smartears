@@ -6,16 +6,16 @@ package net.codemusic.smartears;
  *that constitute a set of related structures to be learned 
  *together
  */
-public interface IExcercise {
+public interface IExercise {
 
     /**
-     *Returns the name of this excercise, e.g. Intervals, Basic Chords, etc
+     *Returns the name of this exercise, e.g. Intervals, Basic Chords, etc
      */
     public String getName();
 
     /**
      *Returns a brief description of what kind of sounds
-     *are in the excercise
+     *are in the exercise
      */
     public String getDescription();
 }

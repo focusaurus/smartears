@@ -5,5 +5,5 @@ public interface IController {
     public IRangeManager getRangeManager();
     public IAnswerManager getAnswerManager();
     public IScoreKeeper getScoreKeeper();
-    public IExcercise getExcercise();
+    public IExercise getExercise();
 }

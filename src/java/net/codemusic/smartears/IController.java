@@ -11,9 +11,9 @@ public interface IController {
     public IAnswerManager getAnswerManager();
     public IExampleEventManager getExampleEventManager();
     public IExampleManager getExampleManager();
-    public IExcerciseEventManager getExcerciseEventManager();
-    public IExcerciseManager getExcerciseManager();
-    public IExcercise[] getExcercises();
+    public IExerciseEventManager getExerciseEventManager();
+    public IExerciseManager getExerciseManager();
+    public IExercise[] getExercises();
     public javax.sound.midi.Instrument[] getInstruments();
     public IScoreEventManager getScoreEventManager();
     public IScoreManager getScoreManager();

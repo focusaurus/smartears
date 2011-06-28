@@ -1,6 +1,6 @@
 package net.codemusic.smartears.event;
 
-public interface ExcerciseEventListener
+public interface ExerciseEventListener
 {
-  public void changeExcercise(ExcerciseEvent e);
+  public void changeExercise(ExerciseEvent e);
 }
