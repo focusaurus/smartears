@@ -7,9 +7,9 @@
   <property name="build.compiler" value="modern"/>
   <property name="build.lib" value="${build.dir}/lib"/>
   <property name="doc.dir" value="doc"/>
-  <property name="javadoc.dir" value="${doc.dir}/api"/>
+  <property name="javadoc.dir" value="${build.dir}/doc"/>
   <property name="lib.dir" value="lib"/>
-  <property name="package.name" value="net.codemusic.smartears"/>
+  <property name="package.name" value="com.peterlyons.smartears"/>
   <property name="package.path" value="net/codemusic/smartears"/>
   <property name="sound.dir" value="sounds"/>
   <property name="src.dir" value="src"/>
@@ -45,7 +45,7 @@
   <target name="compile" depends="prepare">
     <javac deprecation="on" debug="on"
 	   destdir="${build.classes}"
-           optimize="on">
+           optimize="on" includeAntRuntime="false">
       <classpath refid="build.classpath"/>
       <exclude name="net/codemusic/smartears/dev/**"/>
       <src path="${src.dir}/java"/>
@@ -110,7 +110,7 @@
   <target name="javadoc" depends="compile">
     <mkdir dir="${javadoc.dir}"/>  
     <javadoc sourcepath="${src.dir}/java" 
-    packagenames="net.codemusic.smartears,net.codemusic.smartears.event,net.codemusic.smartears.ui"
+    packagenames="com.peterlyons.smartears,com.peterlyons.smartears.event,com.peterlyons.smartears.ui"
     destdir="${javadoc.dir}">
     <classpath refid="run.classpath"/>
     </javadoc>
